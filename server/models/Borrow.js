@@ -15,6 +15,10 @@ const BorrowSchema = mongoose.Schema({
       type: Date,
       default: Date.now
    },
+   createdAt: {
+      type: Date,
+      default: Date.now
+   },
    returnDate: {
       type: Date
    }

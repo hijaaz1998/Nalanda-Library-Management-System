@@ -16,7 +16,7 @@ const generateRefreshToken = (user) => {
   try {
    return jwt.sign(
       { userId: user._id, role: user.role },
-      process.env.REFRESG_TOKEN_TOKEN,
+      process.env.REFRESH_TOKEN_TOKEN,
       { expiresIn: '7d' }
     );
   } catch (error) {

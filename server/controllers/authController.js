@@ -7,7 +7,7 @@ const {
 
 const register = async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     const existingUSer = await User.findOne({ email });
 
@@ -22,6 +22,7 @@ const register = async (req, res) => {
       name,
       email,
       password: encryptedPassword,
+      role
     });
 
     await user.save();

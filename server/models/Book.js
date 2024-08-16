@@ -22,13 +22,17 @@ const BookSchema = new mongoose.Schema({
       type: String,
       required: true
    },
-   NumberOfCopies: {
+   numberOfCopies: {
       type: Number,
       required: true
    },
    availableCopies: {
       type: Number,
       required: true
+   },
+   isDeleted: {
+      type: Boolean,
+      default: false
    },
    createdAt: {
       type: Date,
