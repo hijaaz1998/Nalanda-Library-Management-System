@@ -13,11 +13,14 @@ const authMiddleware = (req, res, next) => {
     const token = authHeader.split(" ")[1];
 
     const decoded = jwt.verify(token,process.env.ACCESS_TOKEN_SECRET)
-    console.log("iiiiii",decoded)
-    req.user = decoded.userId;
+    if (!req.user) {
+      req.user = {};
+    }
+    req.user.id = decoded.userId;
+    req.user.role = decoded.role
     next();
   } catch (error) {
-   res.status(500).json({success: false, message: 'Internal server error'})
+   res.status(500).json({success: false, message: 'Internal srver error'})
   }
 };
 
