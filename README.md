@@ -30,7 +30,7 @@ npm run dev
 ```
 
 
-
+Note: get the api for all the routes from the below API Documentation
 
     
 ## Documentation
