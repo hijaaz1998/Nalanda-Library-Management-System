@@ -9,9 +9,6 @@ const { register, login } = require("../controllers/authController");
 
 const router = express.Router();
 
-// Apply authentication middleware to all routes in this router
-router.use(authMiddleware);
-
 /**
  * POST /register
  * Registers a new user with provided details (e.g., name, email, password).
